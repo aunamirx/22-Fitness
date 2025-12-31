@@ -1,159 +1,260 @@
+<!-- index.html (updated) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>22 Fitness</title>
-  <meta name="description" content="Built for results, priced for you. Elite strength & conditioning, speed & agility, and wrestling/football position training." />
+  <meta name="description" content="Training built around athletic development and consistency." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
-  <!-- Sticky Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home"><span class="logo-22">22</span><span class="logo-text">Fitness</span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
       <nav class="nav">
-        <a href="#programs">Programs</a>
-        <a href="#rates">Rates</a>
-        <a href="#appointments">Appointments</a>
+        <a href="#home">Home</a>
+        <a href="#weekly">Training</a>
+        <a href="#recovery">Recovery</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- ✅ Maintenance sticky bar (under main sticky header) -->
+  <div class="maintenance-bar" role="status" aria-live="polite">
+    <div class="container">Website is under maintenance</div>
+  </div>
+
   <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-inner">
+  <section id="home" class="hero hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner hero-center">
       <div class="hero-copy">
         <p class="kicker">Built for results, priced for you.</p>
         <h1><span class="big">22</span> FITNESS</h1>
-        <p class="sub">Custom sport-specific training in strength, speed & agility, and position skills.</p>
+        <p class="sub">Training built around athletic development and consistency.</p>
+
+        <div class="brand-statement hero-brand">“The Heart. The Vision.”</div>
+
         <div class="cta-row">
-          <a class="btn btn-primary" href="#appointments">Join Now</a>
-          <a class="btn btn-outline" href="#rates">View Rates</a>
+          <a class="btn btn-primary" href="#weekly">This Week</a>
+          <a class="btn btn-outline" href="#private-rates">Rates</a>
         </div>
+
         <div class="coach-tag">Trainer: <strong>Colin Palumbo</strong></div>
       </div>
-      <div class="hero-image"><img src="assets/images/22fithero.jpg" alt="22 Fitness Logo"></div>
     </div>
   </section>
 
-  <!-- Programs -->
-  <section id="programs" class="section dark">
+  <!-- Weekly Sessions -->
+  <section id="weekly" class="section dark">
     <div class="container">
       <div class="section-head">
-        <h2>Expertise</h2>
-        <p>Focused, high-impact sessions for athletes who want real results.</p>
+        <h2>This Week’s Sessions</h2>
+        <p>Weekly group training. Straight work. Real progress.</p>
       </div>
+
+      <div id="weekly-sessions" class="weekly-grid" aria-live="polite"></div>
+
+      <div class="weekly-note">
+        <span class="dot"></span>
+        <span>Schedule updates weekly. Check back every Monday.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training -->
+  <section id="training" class="section light">
+    <div class="container">
+      <div class="section-head">
+        <h2>Performance Training</h2>
+        <p>Built for athletes who want structure, coaching, and measurable progress.</p>
+      </div>
+
       <div class="grid features">
-        <div class="card"><h3>Strength Training</h3><p>Progressive overload for power.</p></div>
-        <div class="card"><h3>Speed &amp; Agility</h3><p>Acceleration, footwork, mechanics.</p></div>
-        <div class="card"><h3>Explosive Training</h3><p>Fast-twitch, game-changing burst.</p></div>
-        <div class="card"><h3>Mobility Training</h3><p>Move better, reduce injury risk.</p></div>
-        <div class="card"><h3>Weight Loss</h3><p>Conditioning tailored to goals.</p></div>
-        <div class="card"><h3>Football &amp; Wrestling Privates</h3><p>Position drills and mat control.</p></div>
+        <div class="card"><h3>Strength Training</h3><p>Quality lifting that carries over to competition.</p></div>
+        <div class="card"><h3>Speed &amp; Agility</h3><p>Footwork, mechanics, and change of direction that translates.</p></div>
+        <div class="card"><h3>Explosive Power</h3><p>Burst work for first-step speed and athletic pop.</p></div>
+        <div class="card"><h3>Mobility &amp; Durability</h3><p>Move better, reduce injury risk, stay available.</p></div>
+        <div class="card"><h3>Conditioning</h3><p>Sport-relevant conditioning with intent, not random burnout.</p></div>
+        <div class="card"><h3>Football &amp; Wrestling Privates</h3><p>Position-focused coaching with clear standards.</p></div>
       </div>
     </div>
   </section>
 
   <!-- Rates -->
-  <section id="rates" class="section light">
+  <section id="private-rates" class="section dark">
     <div class="container">
-      <div class="section-head with-art">
-        <div>
-          <h2>Personal Training Rates</h2>
-          <p class="muted">Pop-Up (Drop-In) <strong>$40 / session</strong> • 1 hour • Sport-specific</p>
+      <div class="section-head">
+        <h2>Private, Individualized Athlete-Focused Training</h2>
+        <p>Clean pricing. Easy to scan.</p>
+      </div>
+
+      <div class="rate-grid">
+        <div class="rate-card">
+          <div class="rate-title">Wrestling Privates</div>
+          <div class="rate-line"><span>$80 / hour</span><span class="tag">1-on-1</span></div>
+          <div class="rate-line"><span>$35 per athlete</span><span class="tag">2–4 athletes</span></div>
+        </div>
+
+        <div class="rate-card">
+          <div class="rate-title">Indoor Football Training</div>
+          <div class="rate-line"><span>$100 / hour</span><span class="tag">1-on-1</span></div>
+          <div class="rate-line"><span>$35 per athlete</span><span class="tag">2–4 athletes</span></div>
+        </div>
+
+        <div class="rate-card">
+          <div class="rate-title">Outdoor Football Training</div>
+          <div class="rate-line"><span>$80 / hour</span><span class="tag">1-on-1</span></div>
+          <div class="rate-line"><span>$40 per athlete</span><span class="tag">2–4 athletes</span></div>
         </div>
       </div>
-
-      <div class="plans">
-        <div class="plan"><div class="plan-name">Basic Package</div><div class="plan-detail">1 Group Training Session Per Week - 22 Fitness Athlete (Posted on our social media)</div><div class="plan-price">$49 <span>per month</span></div></div>
-        <div class="plan featured"><div class="plan-name">Standard Package</div><div class="plan-detail">2 Group Training Sessions Per Week - 22 Fitness Athlete (Posted on our social media)</div><div class="plan-price">$149 <span>per month</span></div></div>
-        <div class="plan"><div class="plan-name">Premium package</div><div class="plan-detail">2 Group Training Sessions per week. 1 private session a week. 2 Lifts at our facility a week - Mix tape from professional photographer.</div><div class="plan-price">$199 <span>per month</span></div></div>
-      </div>
-
-      <ul class="blurb">
-        <li><strong>Sport Performance</strong></li>
-        <li><strong>Elite S&C</strong></li>
-        <li><strong>Explosiveness & Power</strong></li>
-        <li><strong>Plyometrics</strong></li>
-        <li><strong>Speed & Agility</strong></li>
-      </ul>
     </div>
   </section>
 
-  <!-- Appointments -->
-  <section id="appointments" class="section dark">
-    <div class="container narrow">
+  <!-- Thrive Recovery -->
+  <section id="recovery" class="section light">
+    <div class="container">
       <div class="section-head">
-        <h2>Book an Appointment</h2>
-        <p>Tell us your goals. We’ll get you on the schedule.</p>
+        <h2>Thrive Recovery</h2>
+        <p>Where elite training meets elite recovery.</p>
       </div>
 
-      <form id="appt-form" class="form">
-        <div class="field two">
-          <div class="control"><label for="name">Full Name</label><input id="name" name="name" required placeholder="Your name" /></div>
-          <div class="control"><label for="email">Email</label><input id="email" type="email" name="email" required placeholder="you@example.com" /></div>
-        </div>
-        <div class="field two">
-          <div class="control"><label for="phone">Phone</label><input id="phone" name="phone" placeholder="(xxx) xxx-xxxx" /></div>
-          <div class="control">
-            <label for="focus">Sport / Focus</label>
-            <select id="focus" name="focus">
-              <option>General Strength</option><option>Speed & Agility</option><option>Wrestling</option>
-              <option>Football</option><option>Mobility</option><option>Weight Loss</option>
-            </select>
+      <div class="recovery-split">
+        <div class="recovery-visual" aria-hidden="true"></div>
+
+        <div class="recovery-panel">
+          <h3>Recover better. Train harder.</h3>
+          <p>Recovery is part of the plan, not an afterthought. The goal is simple: keep athletes feeling good, moving well, and ready to perform week after week.</p>
+
+          <div class="recovery-points">
+            <div class="rp"><strong>Less wear and tear</strong><span>Improve how the body handles training volume.</span></div>
+            <div class="rp"><strong>Better movement</strong><span>Stay loose, clean up mechanics, stay durable.</span></div>
+            <div class="rp"><strong>More consistency</strong><span>The real advantage is showing up ready every week.</span></div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Ask About Recovery</a>
+            <a class="btn btn-outline" href="#weekly">Weekly Sessions</a>
           </div>
         </div>
-        <div class="field two">
-          <div class="control">
-            <label for="frequency">Session Frequency</label>
-            <select id="frequency" name="frequency">
-              <option>Drop-In</option><option>2x / week (Heart)</option><option>3x / week (Vision)</option><option>4x / week (Execution)</option>
-            </select>
-          </div>
-          <div class="control"><label for="time">Preferred Days/Times</label><input id="time" name="time" placeholder="e.g., M/W/F after 4pm" /></div>
-        </div>
-        <div class="field"><div class="control"><label for="message">Goals / Notes</label><textarea id="message" name="message" rows="5" placeholder="Tell us what you're training for..."></textarea></div></div>
-        <div class="actions"><button type="submit" class="btn btn-primary">Book</button></div>
-      </form>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section light">
+  <!-- Sponsor Highlight -->
+  <section id="sponsor" class="section dark">
     <div class="container">
       <div class="section-head">
+        <h2>Athlete of the Month Sponsor</h2>
+        <p>Supported by Park Place Diner.</p>
+      </div>
+
+      <div class="sponsor-poster">
+        <div class="poster-art" aria-hidden="true"></div>
+        <div class="poster-copy">
+          <div class="poster-kicker">Sponsor Highlight</div>
+          <div class="poster-title">Park Place Diner</div>
+          <p class="poster-sub">Proud supporter of 22 Fitness athletes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (light) -->
+  <section id="contact" class="section light contact-section">
+    <div class="container">
+      <div class="section-head contact-head">
         <h2>Contact</h2>
-        <p>It’s not about where you start. It’s about how bad you want it.</p>
+        <p>Send a message and we will get back to you.</p>
       </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Reach Us</h3>
-          <ul>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/im22fitness" target="_blank">@im22fitness</a></li>
-            <li><strong>Email:</strong> <a href="mailto:colinpbomarketing@gmail.com">colinpbomarketing@gmail.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+18483879377">848-387-9377</a></li>
-          </ul>
+
+      <div class="contact-layout">
+        <!-- LEFT: form + buttons box -->
+        <div class="contact-left">
+          <div class="contact-form-shell">
+            <h3>Send a Message</h3>
+
+            <form id="contact-form" class="mini-form">
+              <div class="field">
+                <div class="control">
+                  <label for="cname">Name</label>
+                  <input id="cname" name="name" required placeholder="Your name" />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <label for="cemail">Email</label>
+                  <input id="cemail" type="email" name="email" required placeholder="you@example.com" />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <label for="cmsg">Message</label>
+                  <textarea id="cmsg" name="message" rows="5" required placeholder="Tell us what you are looking for..."></textarea>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button type="submit" class="btn btn-primary">Send</button>
+              </div>
+
+              <p class="form-note" id="contact-note" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <!-- Separate box for phone + instagram -->
+          <div class="contact-links-shell" aria-label="Contact links">
+            <a class="contact-pill phone-pill" href="tel:+18483879377" aria-label="Call 848-387-9377">
+              <span class="pill-icon">📞</span>
+              <span class="pill-text">848-387-9377</span>
+            </a>
+
+            <a class="contact-pill ig-pill" href="https://instagram.com/im22fitness" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <span class="ig-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4z"/>
+                  <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                  <path d="M17.75 6.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+              </span>
+              <span class="pill-text">Instagram</span>
+            </a>
+          </div>
         </div>
-        <div class="contact-card">
-          <h3>Gym Values</h3>
-          <p><strong>The Heart</strong> — Commitment begins.</p>
-          <p><strong>The Vision</strong> — Eyes on the climb.</p>
-          <p><strong>The Execution</strong> — Ruthless discipline.</p>
-        </div>
+
+        <!-- RIGHT: Meet the trainer -->
+        <aside class="trainer-shell" aria-label="Meet the trainer">
+          <div class="trainer-photo" aria-hidden="true"></div>
+          <h3>Meet the Trainer</h3>
+          <p class="trainer-text">
+            Placeholder bio.
+          </p>
+        </aside>
       </div>
     </div>
   </section>
 
+  <!-- Footer (dark finish) -->
   <footer class="site-footer">
     <div class="container">
-      <div>© <span id="year"></span> 22 Fitness. All Rights Reserved.</div>
+      <div class="footer-row">
+        <span class="footer-copy">© <span id="year"></span> 22 Fitness. All Rights Reserved.</span>
+        <span class="footer-slogan">“The Heart. The Vision.”</span>
+        <span class="footer-spacer" aria-hidden="true"></span>
+      </div>
     </div>
   </footer>
 
