@@ -1,3 +1,4 @@
+/* assets/css/style.css (updated) */
 :root{
   --bg:#ffffff;
   --ink:#0b0c0f;
@@ -14,6 +15,7 @@
   --shadow-1: 0 10px 30px rgba(0,0,0,.08);
   --shadow-2: 0 22px 60px rgba(0,0,0,.12);
 
+  /* red glow used everywhere */
   --glow-1: 0 0 0 1px rgba(229,57,53,.16), 0 0 26px rgba(229,57,53,.12);
   --glow-2: 0 0 0 1px rgba(229,57,53,.20), 0 0 34px rgba(229,57,53,.16);
 
@@ -35,7 +37,7 @@ body{
 img{ max-width:100%; display:block; }
 a{ color: inherit; }
 
-/* ✅ account for header (68px) + maintenance bar (~34px) */
+/* updated for 2 sticky bars (header + maintenance bar) */
 section{ scroll-margin-top: 126px; }
 
 .container{
@@ -99,10 +101,10 @@ h3{ font-size: 18px; line-height:1.25; }
   font-size: 16px;
 }
 
-/* ✅ Maintenance sticky bar (under header) */
+/* Maintenance sticky bar (under header) */
 .maintenance-bar{
   position: sticky;
-  top: 68px;
+  top: 68px;               /* sits directly under the main sticky header */
   z-index: 999;
   background: rgba(229,57,53,.96);
   color: #fff;
@@ -189,16 +191,19 @@ h3{ font-size: 18px; line-height:1.25; }
   background: #ffffff;
 }
 .hero-bg{
-  /* ✅ TEMP: disable hero image so it doesn't display */
-  background-image: none;
-  /* background-image: url("../images/22fithero.jpg"); */
+  background-image: url("../images/thrivehero.jpg");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Keeps faces framed better than dead-center */
+  background-position: center 35%;
 }
 .hero-overlay{
   position:absolute;
   inset:0;
-  background: linear-gradient(180deg, rgba(11,12,15,.72), rgba(11,12,15,.45));
+  background:
+    radial-gradient(1200px 700px at 20% 45%, rgba(0,0,0,.10), rgba(0,0,0,.60)),
+    linear-gradient(180deg, rgba(11,12,15,.58), rgba(11,12,15,.40));
   pointer-events:none;
   z-index:0;
 }
@@ -299,7 +304,7 @@ h3{ font-size: 18px; line-height:1.25; }
   border: 1px solid rgba(15,18,26,.10);
   border-radius: var(--r-md);
   padding: 18px;
-  box-shadow: var(--shadow-1), var(--glow-1);
+  box-shadow: var(--shadow-1), var(--glow-1); /* glow */
 }
 .card p{ margin-top: 8px; color: var(--muted); }
 
@@ -315,7 +320,7 @@ h3{ font-size: 18px; line-height:1.25; }
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
   padding: 16px;
-  box-shadow: 0 18px 60px rgba(0,0,0,.18), var(--glow-2);
+  box-shadow: 0 18px 60px rgba(0,0,0,.18), var(--glow-2); /* glow */
 }
 .weekly-top{
   display:flex;
@@ -328,6 +333,7 @@ h3{ font-size: 18px; line-height:1.25; }
 .weekly-title{ margin-top: 10px; font-weight: 850; color:#fff; }
 .weekly-loc{ margin-top: 8px; color: rgba(255,255,255,.70); font-weight: 650; }
 
+/* clickable weekly location links */
 .weekly-loc-link{
   display:inline-block;
   text-decoration: none;
@@ -371,7 +377,9 @@ h3{ font-size: 18px; line-height:1.25; }
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
   padding: 18px;
-  box-shadow: 0 18px 60px rgba(0,0,0,.18), var(--glow-2);
+  box-shadow:
+    0 18px 60px rgba(0,0,0,.18),
+    var(--glow-2); /* glow */
 }
 .rate-title{ font-weight: 950; color:#fff; margin-bottom: 12px; }
 .rate-line{
@@ -404,7 +412,7 @@ h3{ font-size: 18px; line-height:1.25; }
 .recovery-visual{
   border-radius: var(--r-lg);
   border: 1px solid rgba(15,18,26,.10);
-  box-shadow: var(--shadow-2), var(--glow-1);
+  box-shadow: var(--shadow-2), var(--glow-1); /* glow */
   min-height: 420px;
   background:
     linear-gradient(180deg, rgba(11,12,15,.08), rgba(11,12,15,.22)),
@@ -415,7 +423,7 @@ h3{ font-size: 18px; line-height:1.25; }
 .recovery-panel{
   border-radius: var(--r-lg);
   border: 1px solid rgba(15,18,26,.10);
-  box-shadow: var(--shadow-1), var(--glow-1);
+  box-shadow: var(--shadow-1), var(--glow-1); /* glow */
   background: #ffffff;
   padding: 22px;
   display:flex;
@@ -433,20 +441,20 @@ h3{ font-size: 18px; line-height:1.25; }
   border: 1px solid rgba(15,18,26,.10);
   background: rgba(15,18,26,.03);
   padding: 14px;
-  box-shadow: var(--glow-1);
+  box-shadow: var(--glow-1); /* glow */
 }
 .rp strong{ display:block; }
 .rp span{ display:block; margin-top: 6px; color: var(--muted); }
 
-/* Sponsor */
+/* Sponsor poster (dark box + light text) */
 .sponsor-poster{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   border-radius: var(--r-lg);
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  box-shadow: 0 18px 60px rgba(0,0,0,.22), var(--glow-2);
+  background: rgba(255,255,255,.06);      /* dark-style panel */
+  box-shadow: 0 18px 60px rgba(0,0,0,.22), var(--glow-2); /* glow */
   overflow:hidden;
 }
 .poster-art{
@@ -486,7 +494,7 @@ h3{ font-size: 18px; line-height:1.25; }
   font-size: 16px;
 }
 
-/* CONTACT */
+/* CONTACT LAYOUT */
 .contact-layout{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -601,7 +609,7 @@ h3{ font-size: 18px; line-height:1.25; }
   border-radius: var(--r-lg);
   border: 1px solid rgba(15,18,26,.10);
   background: #ffffff;
-  box-shadow: var(--shadow-1), var(--glow-1);
+  box-shadow: var(--shadow-1), var(--glow-1); /* glow */
   height: 100%;
   display:flex;
   flex-direction:column;
@@ -610,7 +618,7 @@ h3{ font-size: 18px; line-height:1.25; }
   width: 100%;
   border-radius: var(--r-lg);
   border: 1px solid rgba(15,18,26,.10);
-  box-shadow: var(--glow-1);
+  box-shadow: var(--glow-1); /* glow */
   background:
     linear-gradient(180deg, rgba(11,12,15,.06), rgba(11,12,15,.14)),
     url("../images/trainer-placeholder.jpg");
@@ -631,7 +639,7 @@ h3{ font-size: 18px; line-height:1.25; }
   line-height: 1.5;
 }
 
-/* Footer */
+/* Footer (dark finish) */
 .site-footer{
   padding: 34px 0;
   border-top: 1px solid rgba(255,255,255,.10);
@@ -665,6 +673,10 @@ h3{ font-size: 18px; line-height:1.25; }
 @media (max-width: 820px){
   .hero{ padding-top: 92px; }
   .hero-center{ min-height: 460px; }
+
+  .hero-bg{
+    background-position: center 22%;
+  }
 
   .nav-toggle{ display:block; }
   .nav{
@@ -706,4 +718,3 @@ h3{ font-size: 18px; line-height:1.25; }
     justify-self:center;
   }
 }
-
