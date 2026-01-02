@@ -1,10 +1,7 @@
-// assets/js/app.js (UNCHANGED)
+// assets/js/app.js 
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
-
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* Helper: build a Google Maps search link */
 const mapsLink = (query) =>
@@ -78,3 +75,4 @@ if (cForm) {
     if (note) note.textContent = "Opening your email app...";
   });
 }
+
